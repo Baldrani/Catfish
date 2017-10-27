@@ -5,8 +5,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Example Component</div>
 
-                    <div class="panel-body">
+                    <div class="panel-body" @click="testAlert">
                         I'm an example component!
+                        {{test}}
                     </div>
                 </div>
             </div>
@@ -16,8 +17,18 @@
 
 <script>
     export default {
+        data: function(){
+            return {
+                test: "Test"
+            }
+        },
         mounted() {
             console.log('Component mounted.')
+        },
+        methods: {
+            testAlert: function(){
+                alert(this.test)
+            }
         }
     }
 </script>

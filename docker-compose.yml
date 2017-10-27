@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+
+  app:
+    build: ./
+    volumes:
+      - .:/src
+    # ports:
+    #   - 8080:80
+
+  nginx:
+    image: nginx:stable
+    links:
+      - php
+      - composer
+    volumes:
+      - .:/src
+    ports:
+      - "8080:80"
+
+  php:
+    image: php:7.1
+    volumes:
+      - .:/src
+
+  composer:
+    restart: 'no'
+    image: composer:latest
+    command: install
+    volumes:
+      - .:/src
+
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      PMA_ARBITRARY: 1
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    links:
+      - mysql
+    ports:
+      - "8181:80"

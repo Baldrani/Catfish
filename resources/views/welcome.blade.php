@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -76,11 +79,15 @@
                 </div>
             @endif
 
+
             <div class="content">
                 <div class="title m-b-md">
                     Catfish
                 </div>
                 <img src="/img/1.jpg" />
+                <div id="app">
+                    <example-component></example-component>
+                </div>
 
 
                 <div class="links">
