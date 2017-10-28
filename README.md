@@ -29,4 +29,4 @@ Commandes npm propres à Docker pour le projet :
 
 `php artisan key:generate`
 
-Le projet devrait être accessible sur votre **localhost** (port 80) (vérifiez que le port 80 n'était pas occupé par autre chose comme un \*AMP, Skype, etc.
+Le projet devrait être accessible sur votre **localhost** (port 80) (vérifiez que le port 80 n'était pas occupé par autre chose comme un \*AMP, Skype, etc.)
