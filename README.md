@@ -33,3 +33,11 @@ Le projet devrait être accessible sur votre **localhost** (port 80)
 (vérifiez que le port 80 n'était pas occupé par autre chose comme un \*AMP, Skype, etc.)
 
 PHPMyAdmin est accessible sur **localhost:8080**
+
+**Travailler en local**
+
+Lancer `npm run start` pour déployer l'environnement Docker.
+
+`npm run watch` permet d'analyser en continu vos fichiers et compiler les fichiers Sass (*resources/assets/sass/app.scss*) et JS (*resources/assets/js/app.js*) vers des fichiers CSS et JSS du dossier *public*.
+Pour le JS, cela compile automatiquement ES6, les modules, et les fichiers .vue
+*Si la commande `watch` ne fonctionne pas, essayez avec `npm run watch-poll`*
