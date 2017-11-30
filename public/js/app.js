@@ -1671,7 +1671,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            Author: Author
+            Author: "Maël"
         };
     }
 });
@@ -33044,7 +33044,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", [
+    _vm._v(
+      "\n    New Vue template by " +
+        _vm._s(_vm.Author) +
+        " on " +
+        _vm._s(_vm.$shared) +
+        "\n"
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -44664,7 +44672,6 @@ __webpack_require__("./resources/assets/js/bootstrap.js");
 
 window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 window.$ = window.jQuery = __webpack_require__("./node_modules/jquery/dist/jquery.js");
-var MobileDetect = __webpack_require__("./node_modules/mobile-detect/mobile-detect.js");
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -44678,8 +44685,21 @@ var MobileDetect = __webpack_require__("./node_modules/mobile-detect/mobile-dete
 
 Vue.use(__webpack_require__("./node_modules/vuex/dist/vuex.esm.js"));
 
+/* Mobil Detect */
+var MobileDetect = __webpack_require__("./node_modules/mobile-detect/mobile-detect.js");
+var shared = {
+    mb: new MobileDetect(window.navigator.userAgent),
+    mySharedMethod: function mySharedMethod() {
+        //do shared stuff
+    }
+};
+
 var app = new Vue({
     el: '#app',
+
+    data: {
+        shared: shared
+    },
 
     components: {
         GalleryLevel: __WEBPACK_IMPORTED_MODULE_0__components_GalleryLevel_vue___default.a,
@@ -44689,8 +44709,7 @@ var app = new Vue({
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["mapGetters"])('events', ['canOrder']))
 });
 
-var md = new MobileDetect(window.navigator.userAgent);
-console.log(md);
+console.log(md.ua);
 
 /***/ }),
 

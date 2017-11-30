@@ -8,9 +8,8 @@
                 Catfish
             </div>
             <img src="/img/1.jpg" />
-            <ExempleComponent>
-
-            </ExempleComponent>
         </div>
     </div>
+    <exemple-component></exemple-component>
+    <gallery-level :md="md"></gallery-level>
 @endsection

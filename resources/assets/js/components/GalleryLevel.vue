@@ -1,6 +1,6 @@
 <template>
     <div>
-        
+        New Vue template by {{Author}} on {{$shared}}
     </div>
 </template>
 
@@ -8,8 +8,8 @@
     export default {
         data: function(){
             return {
-                Author
+                Author: "Maël"
             }
-        }
+        },
     }
 </script>

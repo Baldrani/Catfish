@@ -5,11 +5,10 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require('./bootstrap')
 
-window.Vue = require('vue');
-window.$ = window.jQuery = require('jquery');
-var MobileDetect = require('mobile-detect')
+window.Vue = require('vue')
+window.$ = window.jQuery = require('jquery')
 
 
 /**
@@ -25,8 +24,21 @@ import { mapGetters } from 'vuex'
 
 Vue.use(require('vuex'))
 
+/* Mobil Detect */
+var MobileDetect = require('mobile-detect')
+const shared = {
+    mb: new MobileDetect(window.navigator.userAgent),
+    mySharedMethod(){
+        //do shared stuff
+    }
+}
+
 const app = new Vue({
     el: '#app',
+
+    data: {
+      shared
+    },
 
     components: {
         GalleryLevel,
@@ -40,5 +52,5 @@ const app = new Vue({
     }
 });
 
-let md = new MobileDetect(window.navigator.userAgent)
-console.log(md)
+
+console.log(md.ua)
