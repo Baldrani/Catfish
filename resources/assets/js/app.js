@@ -8,6 +8,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.$ = window.jQuery = require('jquery');
+var MobileDetect = require('mobile-detect')
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,8 +18,27 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+
+import GalleryLevel from './components/GalleryLevel.vue'
+import ExempleComponent from './components/ExampleComponent.vue'
+import { mapGetters } from 'vuex'
+
+Vue.use(require('vuex'))
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+
+    components: {
+        GalleryLevel,
+        ExempleComponent
+    },
+
+    computed: {
+        ...mapGetters('events', [
+            'canOrder'
+        ])
+    }
 });
+
+let md = new MobileDetect(window.navigator.userAgent)
+console.log(md)
