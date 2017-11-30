@@ -8,9 +8,7 @@
                 Catfish
             </div>
             <img src="/img/1.jpg" />
-            <div id="app">
-                <example-component></example-component>
-            </div>
+            <example-component></example-component>
         </div>
     </div>
 @endsection

@@ -7,7 +7,6 @@
 
                     <div class="panel-body" @click="testAlert">
                         I'm an example component!
-                        {{test}}
                     </div>
                 </div>
             </div>
