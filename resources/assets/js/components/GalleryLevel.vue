@@ -11,5 +11,8 @@
                 Author: "Maël"
             }
         },
+        use: {
+            shared
+        }
     }
 </script>
